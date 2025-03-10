@@ -1,0 +1,37 @@
+# Archivos compilados y dependencias
+*.class
+target/
+node_modules/
+*.log
+*.exe      # Archivos ejecutables en Windows
+
+# Archivos de configuración local
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Archivos de control de versiones
+.git/
+.gitignore
+
+# Archivos temporales y caché
+*.swp
+*.tmp
+.cache/
+*.bak      # Archivos de respaldo
+*.sublime-workspace  # Archivos de configuración de Sublime Text
+*.sublime-project
+*.vscode/settings.json
+
+# Archivos sensibles
+.env
+config/secrets/
+
+# Archivos específicos de IDEs
+.project    # Eclipse
+.classpath  # Eclipse
+nbproject/  # NetBeans

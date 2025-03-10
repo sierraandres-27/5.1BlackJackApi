@@ -1,0 +1,42 @@
+version: "3.9"
+services:
+
+  blackjack-api-image:
+    image: sierraandres27/black-jack-api:v1
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/dockerDB
+    container_name: blackjack-api-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-network
+    depends_on:
+      - mysql
+      - mongodb
+
+  mysql:
+    image: mysql
+    container_name: mysql_database
+    environment:
+      MYSQL_ROOT_PASSWORD: Summertas27@m
+      MYSQL_DATABASE: dockerDB
+      MYSQL_USER: sierra
+      MYSQL_PASSWORD: 2704
+    ports:
+      - "3307:3306"
+    networks:
+      - spring-network
+
+  mongodb:
+    image: mongo
+    container_name: mongo_database
+    ports:
+      - "27017:27017"
+    networks:
+      - spring-network
+
+networks:
+  spring-network:
